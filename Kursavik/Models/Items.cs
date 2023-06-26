@@ -12,7 +12,7 @@ using Microsoft.Data.Sqlite;
 
 namespace Kursavik.Models
 {
-    class Items : INotifyPropertyChanged
+    public class Items : INotifyPropertyChanged
     {
         private int id;
         private string name;

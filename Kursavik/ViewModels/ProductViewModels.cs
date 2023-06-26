@@ -10,6 +10,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using Microsoft.Win32;
+using System.Windows.Media.Imaging;
+using System.Xml;
+using System.IO;
 
 namespace Kursavik.ViewModels
 {
@@ -17,6 +21,7 @@ namespace Kursavik.ViewModels
     {
         private ProductView window;
         private Product selectedProducts;
+        private string ImageFileName { get; set; }
         public ObservableCollection<Product> ProductsList { get; set; }
         public Product SelectedProducts
         {
@@ -41,6 +46,7 @@ namespace Kursavik.ViewModels
                       product.Price = int.Parse(window.Price.Text);
                       product.Count = int.Parse(window.Count.Text);
                       product.LastBatch = window.LastBatch.Text;
+                      product.Image = Convert.ToBase64String(File.ReadAllBytes(ImageFileName));
                       product.Insert();
                       ProductsList.Add(product);
                   }));
@@ -61,7 +67,7 @@ namespace Kursavik.ViewModels
                   }));
             }
         }
-        private RelayCommand updateCommand;
+        private RelayCommand updateCommand; 
         public RelayCommand UpdateCommand
         {
             get
@@ -74,11 +80,36 @@ namespace Kursavik.ViewModels
                       product.Price = int.Parse(window.Price.Text);
                       product.Count = int.Parse(window.Count.Text);
                       product.LastBatch = window.LastBatch.Text;
+                      if (ImageFileName!= null) product.Image = Convert.ToBase64String(File.ReadAllBytes(ImageFileName));
                       product.Update(product.Id);
                   }));
             }
         }
 
+        private RelayCommand loadCommand;
+        public RelayCommand LoadCommand
+        {
+            get
+            {
+                return loadCommand ??
+                  (loadCommand = new RelayCommand(obj =>
+                  {
+                      OpenFileDialog ofd = new OpenFileDialog();
+                      ofd.Filter = "*.jpg|*.jpg|*.bmp|*.bmp|*.png|*.png|";
+                      if (ofd.ShowDialog() == true)
+                      {
+                          BitmapImage myBitmapImage = new BitmapImage();
+                          ImageFileName = ofd.FileName;
+                          myBitmapImage.BeginInit();
+                          myBitmapImage.UriSource = new Uri(ofd.FileName);
+                          myBitmapImage.DecodePixelWidth = 200;
+                          myBitmapImage.EndInit();
+                          window.Image.Source = myBitmapImage;
+
+                      }
+                  }));
+            }
+        }
 
 
         public ProductsViewModel(ProductView window)
@@ -103,7 +134,7 @@ namespace Kursavik.ViewModels
                             product.Price = reader.GetInt32(2);
                             product.Count = reader.GetInt32(3);
                             product.Name = reader.GetString(4);
-                            //product.Image = (byte[])reader["Foto"];
+                            product.Image = reader.GetString(5);
                             ProductsList.Add(product);
                         }
                     }

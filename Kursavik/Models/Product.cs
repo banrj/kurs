@@ -17,7 +17,16 @@ namespace Kursavik.Models
         private string lastBatch;
         private int count;
         private int price;
-        //private byte[] image;
+        private string image=" ";
+        public string Image
+        {
+            get { return image; }
+            set
+            {
+                image = value;
+                OnPropertyChanged("Image");
+            }
+        }
 
         public int Id  
         {
@@ -33,21 +42,9 @@ namespace Kursavik.Models
                 name = value;
                 OnPropertyChanged("Name");
             }
-        }
+        }    
 
-        //public byte[] Image
-
-        //{
-
-        // get { return image; }
-        // set
-        //  {
-        // image = value;
-        //OnPropertyChanged("Image");
-        //}
-    
-
-    public string LastBatch
+        public string LastBatch
         {
             get { return lastBatch; }
             set 
@@ -84,7 +81,7 @@ namespace Kursavik.Models
 
                 SqliteCommand command = new SqliteCommand();
                 command.Connection = connection;
-                command.CommandText = $"INSERT INTO Product (name, price,last_batch,count_operation) VALUES ('{Name}', '{Price}','{LastBatch}','{Count}')";
+                command.CommandText = $"INSERT INTO Product (name, price,last_batch,count_operation, foto) VALUES ('{Name}', '{Price}','{LastBatch}','{Count}', {Image})";
                 command.ExecuteNonQuery();
             }
         }
@@ -109,7 +106,7 @@ namespace Kursavik.Models
                 SqliteCommand command = new SqliteCommand();
                 command.Connection = connection;
                 command.CommandText = $"UPDATE Product SET name='{Name}', price='{Price}',last_batch='{LastBatch}'," +
-                    $"count_operation='{Count}' where ID={id}";
+                    $"count_operation='{Count}, foto={Image}' where ID={id}";
                 command.ExecuteNonQuery();
             }
         }

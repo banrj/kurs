@@ -65,3 +65,8 @@ C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\runtimes\
 C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\banrj\source\repos\Kursavik\Kursavik\obj\Debug\net7.0-windows\Views\ItemView.g.cs
 C:\Users\banrj\source\repos\Kursavik\Kursavik\obj\Debug\net7.0-windows\Views\ItemView.baml
+C:\Users\banrj\source\repos\Kursavik\Kursavik\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\MaterialDesignColors.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\obj\Debug\net7.0-windows\App.baml

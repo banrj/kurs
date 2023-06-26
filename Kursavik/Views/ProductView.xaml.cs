@@ -26,14 +26,7 @@ namespace Kursavik.Views
             DataContext = new ProductsViewModel(this);
         }
 
-        private void Button_Clear(object sender, RoutedEventArgs e)
-        {
-            Name.Clear();
-            Price.Clear();
-            Count.Clear();
-            
-        }
-
+     
         private void Show_Items(object sender, RoutedEventArgs e)
         {
             ItemView itemView = new ItemView();
