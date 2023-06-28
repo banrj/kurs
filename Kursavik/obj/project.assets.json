@@ -2486,19 +2486,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\banrj\\.nuget\\packages\\": {}
+    "C:\\Users\\wsr\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\banrj\\source\\repos\\Kursavik\\Kursavik\\Kursavik.csproj",
+      "projectUniqueName": "C:\\Users\\wsr\\Source\\Repos\\BogKurs\\Kursavik\\Kursavik.csproj",
       "projectName": "Kursavik",
-      "projectPath": "C:\\Users\\banrj\\source\\repos\\Kursavik\\Kursavik\\Kursavik.csproj",
-      "packagesPath": "C:\\Users\\banrj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\banrj\\source\\repos\\Kursavik\\Kursavik\\obj\\",
+      "projectPath": "C:\\Users\\wsr\\Source\\Repos\\BogKurs\\Kursavik\\Kursavik.csproj",
+      "packagesPath": "C:\\Users\\wsr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wsr\\Source\\Repos\\BogKurs\\Kursavik\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\banrj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wsr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2568,7 +2573,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

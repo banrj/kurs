@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -18,8 +19,8 @@ namespace Kurs.Model
         private string name;
         private string? description = " ";
         private int count;
-     
 
+        [Key]
         public int Id
         {
             get { return id; }

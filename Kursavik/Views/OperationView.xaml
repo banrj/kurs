@@ -4,9 +4,92 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursavik.Views"
+         xmlns:localMy="clr-namespace:Kurs.Model"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="OperationView" Height="450" Width="800">
+        Title="OperationView" Height="500" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+
+            <ListBox x:Name="Items" Margin="10"
+                ItemsSource="{Binding OperationList}" 
+                SelectedItem="{Binding SelectedOperation}"
+                     Grid.Row="0">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding Path=IDPlan}" FontSize="12" />
+                            <TextBlock Text="{Binding Path=IDWorkshop}"  FontSize="12" />
+                            <TextBlock Text="{Binding Path=IDProduct}" FontSize="12" />
+                            <TextBlock Text="{Binding Path=Time}" FontSize="12" />
+                            <TextBlock Text="{Binding Path=Description}" FontSize="12" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                <Button Content="Create" Width="100" Height="50" Margin="10 0" Command="{Binding AddCommand}"/>
+                <Button Content="Delete" Width="100" Height="50" Margin="10 0" Command="{Binding RemoveCommand}"
+                CommandParameter="{Binding SelectedOperation}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.4*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Введите номер чертежа" Grid.Row="0"/>
+            <TextBox x:Name="IDPlan" Margin="10,43,10,10" Grid.Row="0"
+                Text="{Binding IDPlan, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Введите номер цеха" Grid.Row="1"/>
+            <TextBox x:Name="IDWorkshop" Margin="10,44,200,10" Grid.Row="1" 
+                Text="{Binding IDWorkshop, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Выберите Продукт создания" Grid.Row="2" />
+            <ComboBox x:Name="IDProduct" Margin="10,23,140,23" ItemsSource="{Binding ProductList}" Grid.Row="2" Height="25" Width="250">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Введите время создания в минутах" Grid.Row="3"/>
+            <TextBox x:Name="Time" Margin="10,26,140,26" Grid.Row="3" Width="250" 
+                Text="{Binding Time, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Напишите описание" Grid.Row="4"/>
+            <TextBox x:Name="Description" Margin="10,25,10,27" Grid.Row="4" 
+                Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"/>
+            
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" 
+                    Grid.Row="5">
+                <Button Content="Ok" Width="100" Height="40" Margin="10 0" Command="{Binding UpdateCommand}"
+            CommandParameter="{Binding SelectedItems}"/>
+
+            </StackPanel>
+        </Grid>
         
+
     </Grid>
 </Window>

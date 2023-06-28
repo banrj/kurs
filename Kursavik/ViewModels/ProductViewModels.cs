@@ -13,7 +13,7 @@ using System.Text;
 using System.Windows.Media.Imaging;
 
 
-namespace Kursavik.ViewModels
+namespace Kurs.ViewModels
 {
     class ProductsViewModel : INotifyPropertyChanged
     {
@@ -43,8 +43,8 @@ namespace Kursavik.ViewModels
                       product.Name = window.Name.Text;
                       product.Price = int.Parse(window.Price.Text);
                       product.Count = int.Parse(window.Count.Text);
-                      product.LastBatch = window.LastBatch.Text;
-                      product.ImageProduct = Convert.ToBase64String(File.ReadAllBytes(ImageFileName));
+                      product.Last_batch = window.LastBatch.Text;
+                      product.Foto = Convert.ToBase64String(File.ReadAllBytes(ImageFileName));
                       product.Insert();
                       ProductsList.Add(product);
                   }));
@@ -60,7 +60,7 @@ namespace Kursavik.ViewModels
                   {
                       Product product = obj as Product;
                       if (product == null) return;
-                      product.Delete(product.Id);
+                      product.Delete(product.ID);
                       ProductsList.Remove(product);
                   }));
             }
@@ -77,9 +77,9 @@ namespace Kursavik.ViewModels
                       product.Name = window.Name.Text;
                       product.Price = int.Parse(window.Price.Text);
                       product.Count = int.Parse(window.Count.Text);
-                      product.LastBatch = window.LastBatch.Text;
-                      if (ImageFileName!= null) product.ImageProduct = Convert.ToBase64String(File.ReadAllBytes(ImageFileName));
-                      product.Update(product.Id);
+                      product.Last_batch = window.LastBatch.Text;
+                      if (ImageFileName!= null) product.Foto = Convert.ToBase64String(File.ReadAllBytes(ImageFileName));
+                      product.Update(product.ID);
                   }));
             }
         }
@@ -127,12 +127,12 @@ namespace Kursavik.ViewModels
                         while (reader.Read())
                         {
                             Product product = new Product();
-                            product.Id = reader.GetInt32(0);
-                            product.LastBatch = reader.GetString(1);
+                            product.ID = reader.GetInt32(0);
+                            product.Last_batch = reader.GetString(1);
                             product.Price = reader.GetInt32(2);
                             product.Count = reader.GetInt32(3);
                             product.Name = reader.GetString(4);
-                            product.ImageProduct = reader.GetString(5)??"";
+                            product.Foto = reader.GetString(5)??"";
                             ProductsList.Add(product);
                         }
                     }

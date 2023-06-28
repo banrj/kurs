@@ -1,4 +1,6 @@
 ﻿using System;
+using Kurs.ViewModels;
+using Kursasivik.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,7 @@ namespace Kursavik.Views
         public OperationView()
         {
             InitializeComponent();
+            DataContext = new OperationViewModel(this);
         }
     }
 }

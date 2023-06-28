@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -12,26 +13,27 @@ namespace Kurs.Model
 {
     public class Product : INotifyPropertyChanged
     {
-        private int id;
+        private int Id;
         private string? name;
-        private string? lastBatch;
+        private string? last_batch;
         private int count;
         private int price;
-        private string? imageProduct;
-        public string ImageProduct
+        private string? foto;
+        public string Foto
         {
-            get { return imageProduct!; }
+            get { return foto!; }
             set
             {
-                imageProduct = value;
-                OnPropertyChanged("ImageProduct");
+                foto = value;
+                OnPropertyChanged("Foto");
             }
         }
 
-        public int Id  
+        [Key]
+        public int ID 
         {
-            get { return id; }
-            set { id = value; }
+            get { return Id; }
+            set { Id = value; }
         }
 
         public string Name
@@ -44,14 +46,14 @@ namespace Kurs.Model
             }
         }    
 
-        public string LastBatch
+        public string Last_batch
         {
-            get { return lastBatch!; }
+            get { return last_batch!; }
             set 
-            { 
-            
-                lastBatch = value.ToString();
-                OnPropertyChanged("LastBatch");
+            {
+
+                last_batch = value.ToString();
+                OnPropertyChanged("Last_Batch");
             }
         }
         public int Count
@@ -81,7 +83,7 @@ namespace Kurs.Model
 
                 SqliteCommand command = new SqliteCommand();
                 command.Connection = connection;
-                command.CommandText = $"INSERT INTO Product (name, price,last_batch,count_operation, foto) VALUES ('{Name}', '{Price}','{LastBatch}','{Count}', '{ImageProduct}')";
+                command.CommandText = $"INSERT INTO Product (name, price,last_batch,count_operation, foto) VALUES ('{Name}', '{Price}','{Last_batch}','{Count}', '{Foto}')";
                 command.ExecuteNonQuery();
             }
         }
@@ -105,8 +107,8 @@ namespace Kurs.Model
 
                 SqliteCommand command = new SqliteCommand();
                 command.Connection = connection;
-                command.CommandText = $"UPDATE Product SET name='{Name}', price='{Price}',last_batch='{LastBatch}'," +
-                    $"count_operation='{Count}, foto={ImageProduct}' where ID={id}";
+                command.CommandText = $"UPDATE Product SET Name='{Name}', Price='{Price}',Last_batch='{Last_batch}'," +
+                    $"Count='{Count}, Foto={Foto}' where ID={id}";
                 command.ExecuteNonQuery();
             }
         }

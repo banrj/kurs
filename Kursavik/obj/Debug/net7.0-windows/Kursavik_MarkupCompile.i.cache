@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\banrj\source\repos\Kursavik\Kursavik\obj\Debug\net7.0-windows\
+C:\Users\wsr\Source\Repos\BogKurs\Kursavik\obj\Debug\net7.0-windows\
 Kursavik
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\banrj\source\repos\Kursavik\Kursavik\App.xaml
+C:\Users\wsr\Source\Repos\BogKurs\Kursavik\App.xaml
 31088026081
 
 16182656505
-224-1232400705
+224-671354856
 Views\ItemView.xaml;Views\OperationView.xaml;Views\ProductView.xaml;
 
-False
+True
 

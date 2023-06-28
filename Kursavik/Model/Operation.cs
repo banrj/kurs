@@ -11,57 +11,57 @@ namespace Kurs.Model
 {
     public class Operation : INotifyPropertyChanged
     {
-
+        [Key]
         public int ID { get; set; }
-        private int Idplan;
-        public int IDPlan
+        private int plan_Id;
+        public int plan_id
         {
-            get { return Idplan; }
+            get { return plan_Id; }
             set
             {
-                Idplan = value;
-                OnPropertyChanged("IDPlan");
+                plan_Id = value;
+                OnPropertyChanged("plan_id");
             }
         }
-        private int Idworkshop;
-        public int IDWorkshop
+        private int workshop_Id;
+        public int workshop_id
         {
-            get { return Idworkshop; }
+            get { return workshop_Id; }
             set
             {
-                Idworkshop = value;
-                OnPropertyChanged("IDWorkshop");
+                workshop_Id = value;
+                OnPropertyChanged("workshop_Id");
             }
         }
-        private int IdProduct;
-        public int IDProduct
+        private int product_Id;
+        public int product_id
         {
-            get { return IdProduct; }
+            get { return product_id; }
             set
             {
-                IdProduct = value;
-                OnPropertyChanged("IDProduct");
+                product_id = value;
+                OnPropertyChanged("product_Id");
             }
         }
-        private int time;
-        public int Time
+        private int Time;
+        public int time
         {
-            get { return time; }
+            get { return Time; }
             set
             {
-                time = value;
-                OnPropertyChanged("Time");
+                Time = value;
+                OnPropertyChanged("time");
             }
         }
 
-        private string? description;
-        public string Description
+        private string? Description;
+        public string description
         {
-            get { return description; }
+            get { return Description; }
             set
             {
-                description = value;
-                OnPropertyChanged("Description");
+                Description = value;
+                OnPropertyChanged("description");
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;

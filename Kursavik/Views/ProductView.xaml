@@ -80,7 +80,7 @@
                         <StackPanel Grid.Column="0" DataContext="{Binding SelectedProduct}">
                             <materialDesign:Card Margin="5">
                                 <Image x:Name="ImageProduct" Margin="10" Height="200"
-									   Source="{Binding ImageProduct,Converter={StaticResource myConverter}}"/>
+									   Source="{Binding Foto,Converter={StaticResource myConverter}}"/>
                             </materialDesign:Card>
                         </StackPanel>
                         <materialDesign:Card Margin="5">
@@ -96,10 +96,10 @@
 							Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Content="Напишите кол-во операций для создания" Grid.Row="3"/>
                         <TextBox x:Name="Count" Margin="10,25,10,10" Grid.Row="3"
-							Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}"/>
+							Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}" Height="29"/>
                         <Label Content="Выберите дату" Grid.Row="4"/>
                         <DatePicker x:Name="LastBatch" Margin="10,25,10,10" Grid.Row="4"
-						Text="{Binding LastBatch, UpdateSourceTrigger=PropertyChanged}"/>
+						Text="{Binding Last_batch, UpdateSourceTrigger=PropertyChanged}"/>
 
                     </StackPanel>
                 </Grid>
