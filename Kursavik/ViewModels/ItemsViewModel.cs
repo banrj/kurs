@@ -1,4 +1,4 @@
-﻿using Kursavik.Models;
+﻿using Kurs.Model;
 using Kursavik.Views;
 using System;
 using System.Collections.Generic;

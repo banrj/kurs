@@ -70,3 +70,17 @@ C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\MaterialD
 C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\MaterialDesignThemes.Wpf.dll
 C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\banrj\source\repos\Kursavik\Kursavik\obj\Debug\net7.0-windows\App.baml
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\banrj\source\repos\Kursavik\Kursavik\bin\Debug\net7.0-windows\Microsoft.Extensions.Primitives.dll

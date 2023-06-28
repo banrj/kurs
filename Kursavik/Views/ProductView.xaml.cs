@@ -32,5 +32,11 @@ namespace Kursavik.Views
             ItemView itemView = new ItemView();
             itemView.Show();
         }
+
+        private void Show_Operations(object sender, RoutedEventArgs e)
+        {
+            OperationView operationView = new OperationView();
+            operationView.Show();
+        }
     }
 }
