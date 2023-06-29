@@ -54,7 +54,7 @@ namespace Kursavik.ViewModels
                   {
                       Items item = obj as Items;
                       if (item == null) return;
-                      item.Delete(item.Id);
+                      item.Delete(item.ID);
                       ItemsList.Remove(item);
                   }));
             }
@@ -71,7 +71,7 @@ namespace Kursavik.ViewModels
                       item.Name = window.Name.Text;
                       item.Count = int.Parse(window.Count.Text);
                       item.Description = window.Description.Text;
-                      item.Update(item.Id);
+                      item.Update(item.ID);
 
                   }));
             }
@@ -96,9 +96,9 @@ namespace Kursavik.ViewModels
                         while (reader.Read())
                         {
                             Items item = new Items();
-                            item.Id = reader.GetInt32(0);
+                            item.ID = reader.GetInt32(0);
                             item.Name = reader.GetString(1);
-                            if (reader["description"] != DBNull.Value) item.Description = reader.GetString(2);
+                            if (reader["Description"] != DBNull.Value) item.Description = reader.GetString(2);
                             item.Count = reader.GetInt32(3);
 
                             ItemsList.Add(item);

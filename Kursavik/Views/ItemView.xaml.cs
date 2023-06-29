@@ -28,13 +28,7 @@ namespace Kursavik.Views
 
         }
 
-        private void Button_Clear(object sender, RoutedEventArgs e)
-        {
-            Name.Clear();
-            Description.Clear();
-            Count.Clear();
-
-        }
+        
 
     }
 }

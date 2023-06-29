@@ -21,7 +21,7 @@ namespace Kurs.Model
         private int count;
 
         [Key]
-        public int Id
+        public int ID
         {
             get { return id; }
             set { id = value; }
@@ -68,7 +68,7 @@ namespace Kurs.Model
 
                 SqliteCommand command = new SqliteCommand();
                 command.Connection = connection;
-                command.CommandText = $"INSERT INTO Items (name, description, count) VALUES ('{Name}','{Description}','{Count}')";
+                command.CommandText = $"INSERT INTO Items (Name, Description, Count) VALUES ('{Name}','{Description}','{Count}')";
                 command.ExecuteNonQuery();
             }
         }
@@ -92,7 +92,7 @@ namespace Kurs.Model
 
                 SqliteCommand command = new SqliteCommand();
                 command.Connection = connection;
-                command.CommandText = $"UPDATE Items SET name='{Name}', count='{Count}',description='{Description}' where ID={id}";
+                command.CommandText = $"UPDATE Items SET Name='{Name}', Count='{Count}',Description='{Description}' where ID={id}";
                 command.ExecuteNonQuery();
             }
         }

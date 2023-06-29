@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Data.Entity;
 
-namespace Kursasivik.ViewModels
+namespace Kursavik.ViewModels
 {
-    public class OperationViewModel
+    public class OperationViewModel: INotifyPropertyChanged
     {
         private OperationView window;
         private Operation selectedOperation;
@@ -42,10 +42,11 @@ namespace Kursasivik.ViewModels
                       operation.plan_id = int.Parse(window.IDPlan.Text);
                       operation.workshop_id = int.Parse(window.IDWorkshop.Text);
                       operation.product_id = (window.IDProduct.SelectedItem as Product).ID;
-                      operation.time = int.Parse(window.Time.Text);
+                      operation.time = int.Parse(window.Time.Text); 
                       operation.description = window.Description.Text;
                       db.Operation.Add(operation);
                       db.SaveChanges();
+                      OperationList.Add(operation);
                   }));
             }
         }
@@ -63,6 +64,7 @@ namespace Kursasivik.ViewModels
                       if (operation == null) return;
                       db.Operation.Remove(operation);
                       db.SaveChanges();
+                      OperationList.Remove(operation);
                   }));
             }
         }
@@ -72,8 +74,9 @@ namespace Kursasivik.ViewModels
             db.Database.EnsureCreated();
             db.Operation.Load();
             db.Product.Load();
+            OperationList = db.Operation.Local.ToObservableCollection();
             ProductList = db.Product.Local.ToObservableCollection();
-            
+
         }
 
 

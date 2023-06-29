@@ -1,6 +1,6 @@
 ﻿using System;
 using Kurs.ViewModels;
-using Kursasivik.ViewModels;
+using Kursavik.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

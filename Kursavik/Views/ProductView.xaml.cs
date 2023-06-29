@@ -38,5 +38,17 @@ namespace Kursavik.Views
             OperationView operationView = new OperationView();
             operationView.Show();
         }
+
+        private void Show_TypeInstrument(object sender, RoutedEventArgs e)
+        {
+            InstrumentView instrumentView = new InstrumentView();
+            instrumentView.Show();
+        }
+
+        private void Show_Instruments(object sender, RoutedEventArgs e)
+        {
+            InstrumentsView instrumentsView = new InstrumentsView();
+            instrumentsView.Show();
+        }
     }
 }

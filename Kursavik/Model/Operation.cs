@@ -36,11 +36,11 @@ namespace Kurs.Model
         private int product_Id;
         public int product_id
         {
-            get { return product_id; }
+            get { return product_Id; }
             set
             {
-                product_id = value;
-                OnPropertyChanged("product_Id");
+                product_Id = value;
+                OnPropertyChanged("product_id");
             }
         }
         private int Time;

@@ -35,8 +35,8 @@
                     <MenuItem Header="Данные" Height="42" Width="145">
                         <MenuItem Header="Операции" Click="Show_Operations"/>
                         <MenuItem Header="Материалы" Click="Show_Items" />
-                        <MenuItem Header="Типы Инструментов"/>
-                        <MenuItem Header="Интсрументы"/>
+                        <MenuItem Header="Типы Инструментов"  Click="Show_TypeInstrument" />
+                        <MenuItem Header="Интсрументы" Click="Show_Instruments" />
                         <MenuItem Header="Заказы"/>
                         <MenuItem Header="Запрос материалов"/>
                         <MenuItem Header="Полный запрос"/>

@@ -1,0 +1,88 @@
+﻿<Window x:Class="Kursavik.Views.InstrumentsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursavik.Views"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="Ин" Height="500" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+
+            <ListBox x:Name="Items" Margin="10"
+                ItemsSource="{Binding InstrumentsList}" 
+                SelectedItem="{Binding SelectedInstruments}"
+                     Grid.Row="0">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding Path=Receipt_date}" FontSize="12" />
+                            <TextBlock Text="{Binding Path=Operation_id}"  FontSize="12" />
+                            <TextBlock Text="{Binding Path=Type}" FontSize="12" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                <Button Content="Create" Width="100" Height="50" Margin="10 0" Command="{Binding AddCommand}"/>
+                <Button Content="Delete" Width="100" Height="50" Margin="10 0" Command="{Binding RemoveCommand}"
+                CommandParameter="{Binding SelectedInstruments}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Введите преднозначение" Grid.Row="0"/>
+            <ComboBox x:Name="Operation_id" Margin="10,26,140,13" ItemsSource="{Binding OperationList}" Height="30" Grid.Row="0" Width="250">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding ID}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Введите тип инструмента" Grid.Row="1"/>
+            <ComboBox x:Name="Type" Margin="10,26,140,13" ItemsSource="{Binding InstrumentList}" Height="30" Grid.Row="1" Width="250">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Введите дату поставки" Grid.Row="2"/>
+            <DatePicker x:Name="Receipt_date" Margin="10,37,10,37" Grid.Row="2"
+						Text="{Binding Receipt_date, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" 
+                    Grid.Row="5">
+                <Button Content="Ok" Width="100" Height="40" Margin="10 0" Command="{Binding UpdateCommand}"
+                CommandParameter="{Binding SelectedInstruments}"/>
+
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+</Window>
+

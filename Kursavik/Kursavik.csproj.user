@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\InstrumentsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\InstrumentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ItemView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,6 +24,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\InstrumentsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\InstrumentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ItemView.xaml">
       <SubType>Designer</SubType>
     </Page>
